@@ -1,0 +1,12 @@
+trigger:
+  - main
+
+pool:
+  name: 'Dinesh-Laptop-Agent'
+
+steps:
+  - script: echo "Azure DevOps CI/CD Pipeline is working!"
+    displayName: 'Test Pipeline'
+
+  - script: docker build -t azure-devops-cicd-demo:$(Build.BuildId) .
+    displayName: 'Build Docker Image'
